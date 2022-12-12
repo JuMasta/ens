@@ -1,5 +1,7 @@
 FROM ubuntu:22.04
 
+ARG arg1=hello
+ARG arg2=world
 
 RUN apt-get update && \
     apt-get install curl -y 
@@ -24,5 +26,7 @@ WORKDIR /ens-metadata-service
 RUN cp .env.org .env  && \
     yarn && \
     yarn build
+   
+RUN echo  $arg1 $arg2
 
 ENTRYPOINT [ "yarn", "start" ]
