@@ -1,12 +1,12 @@
 FROM ubuntu:22.04
 
-ARG arg1=hello
-ARG arg2=world
+ARG v1=20
+ARG v2=20
 
 RUN apt-get update && \
     apt-get install curl -y 
 
-RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash && \ 
+RUN curl -fsSL https://deb.nodesource.com/setup_$v1$v2.x | bash && \ 
     apt-get install -y nodejs
 
 
